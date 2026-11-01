@@ -1,0 +1,8 @@
+node_modules/
+dist/
+react-product-explorer/react-product-explorer/.vite-cache/
+.env
+.env.*
+!.env.example
+.evn
+.DS_Store

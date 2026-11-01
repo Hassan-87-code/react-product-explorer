@@ -13,6 +13,7 @@ function useProducts({
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -54,13 +55,14 @@ function useProducts({
     return () => {
       controller.abort();
     };
-  }, [search, category, sortBy, order, limit, skip]);
+  }, [search, category, sortBy, order, limit, skip, retryCount]);
 
   return {
     items,
     total,
     loading,
     error,
+    retry: () => setRetryCount((count) => count + 1),
   };
 }
 

@@ -1,4 +1,5 @@
-function SortControl({ value, onChange }) {
+/** Controlled sort selector; DummyJSON supports sortBy/order on list and search requests. */
+function SortControl({ value = "", onChange = () => {} }) {
   return (
     <div>
       <label
@@ -12,7 +13,7 @@ function SortControl({ value, onChange }) {
         id="sort-products"
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+        className="w-full rounded-lg border border-slate-300 bg-white px-4 py-3 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
       >
         <option value="">Default</option>
         <option value="title-asc">Title A–Z</option>
